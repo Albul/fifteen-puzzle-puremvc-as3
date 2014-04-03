@@ -22,6 +22,7 @@ import view.ChoiceGameMenuMediator;
 
 import view.MainMenuMediator;
 
+
 public class ShowChoiceGameCommand extends SimpleCommand {
 
 	override public function execute(notification:INotification):void {
