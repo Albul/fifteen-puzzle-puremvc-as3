@@ -32,21 +32,21 @@ import org.puremvc.as3.patterns.facade.Facade;
 
 public class ApplicationFacade extends Facade implements IFacade {
 
-	public static const CMD_STARTUP:String = "cmdStartup";          // Запуск приложения
-	public static const CMD_NEW_GAME:String = "cmdNewGame";         // Создание новой игры
-	public static const CMD_PUZZLE_CLICK:String = "cmdPuzzleClick"; // Клик по пазлу
-	public static const CMD_FINISH:String = "cmdFinish";            // Завершить игру
-	public static const CMD_EXIT:String = "cmdExit";                // Выход из игры
+	public static const CMD_STARTUP:String = "cmdStartup"; // Run the application
+	public static const CMD_NEW_GAME:String = "cmdNewGame";
+	public static const CMD_PUZZLE_CLICK:String = "cmdPuzzleClick";
+	public static const CMD_FINISH:String = "cmdFinish";
+	public static const CMD_EXIT:String = "cmdExit"; // Quit the game
 
-	public static const SHOW_MAIN_MENU:String = "showMainMenu";     // Показать главное меню
-	public static const SHOW_CHOICE_GAME:String = "showChoiceGame"; // Показать меню выбора игры
-	public static const SHOW_RECORDS:String = "showRecords";		// Показать меню "рекорды"
-	public static const SHOW_ABOUT:String = "showAbout";			// Показать меню "об игре"
+	public static const SHOW_MAIN_MENU:String = "showMainMenu";
+	public static const SHOW_CHOICE_GAME:String = "showChoiceGame";
+	public static const SHOW_RECORDS:String = "showRecords";
+	public static const SHOW_ABOUT:String = "showAbout";
 
-	public static const STAGE_RESIZE:String = "stageResize";		// Сцена изменила размер
-	public static const PUZZLES_CREATED:String = "puzzlesCreated";	// Матрица пазлов создана
-	public static const PUZZLES_CHANGED:String = "puzzlesChanged";	// Матрица изменилась
-	public static const TIME_UPDATED:String = "timeUpdated";		// Время игры обновлено
+	public static const STAGE_RESIZE:String = "stageResize";
+	public static const PUZZLES_CREATED:String = "puzzlesCreated"; // Matrix of puzzles is created
+	public static const PUZZLES_CHANGED:String = "puzzlesChanged";
+	public static const TIME_UPDATED:String = "timeUpdated";
 
 	public static function getInstance():ApplicationFacade {
 		if (instance == null) instance = new ApplicationFacade();
