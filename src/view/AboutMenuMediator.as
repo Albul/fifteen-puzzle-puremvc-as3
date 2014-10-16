@@ -26,36 +26,36 @@ import view.gui.Button;
 
 public class AboutMenuMediator extends Mediator implements IMediator {
 
-	public static const NAME:String = "aboutMenuMediator";
+    public static const NAME:String = "aboutMenuMediator";
 
-	private var menu:AboutMenu;
+    private var menu:AboutMenu;
 
-	public function AboutMenuMediator(viewComponent:Object) {
-		super(NAME, viewComponent);
+    public function AboutMenuMediator(viewComponent:Object) {
+        super(NAME, viewComponent);
 
-		menu = viewComponent as AboutMenu;
-		menu.addEventListener(MouseEvent.CLICK, onMenuClick);
-	}
+        menu = viewComponent as AboutMenu;
+        menu.addEventListener(MouseEvent.CLICK, onMenuClick);
+    }
 
-	public function showMenu():void {
-		menu.show();
-	}
+    public function showMenu():void {
+        menu.show();
+    }
 
-	public function hideMenu():void {
-		menu.hide();
-	}
+    public function hideMenu():void {
+        menu.hide();
+    }
 
-	private function onMenuClick(e:MouseEvent):void {
-		if (e.target is SimpleButton) {
-			switch (Button(e.target.parent).title) {
-				case "Назад":
-					sendNotification(ApplicationFacade.SHOW_MAIN_MENU, this);
-					break;
+    private function onMenuClick(e:MouseEvent):void {
+        if (e.target is SimpleButton) {
+            switch (Button(e.target.parent).title) {
+                case "Назад":
+                    sendNotification(ApplicationFacade.SHOW_MAIN_MENU, this);
+                    break;
 
-				default :
-					break;
-			}
-		}
-	}
+                default :
+                    break;
+            }
+        }
+    }
 }
 }

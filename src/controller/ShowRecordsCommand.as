@@ -25,15 +25,14 @@ import view.RecordsMenuMediator;
 
 public class ShowRecordsCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
-		mainMenuMediator.hideMenu();
+    override public function execute(notification:INotification):void {
+        var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
+        mainMenuMediator.hideMenu();
 
-		var recordsProxy:RecordsProxy = facade.retrieveProxy(RecordsProxy.NAME) as RecordsProxy;
-		var recordsMenuMediator:RecordsMenuMediator = facade.retrieveMediator(RecordsMenuMediator.NAME) as RecordsMenuMediator;
-		recordsMenuMediator.setRecords(recordsProxy.records);
-		recordsMenuMediator.showMenu();
-	}
-
+        var recordsProxy:RecordsProxy = facade.retrieveProxy(RecordsProxy.NAME) as RecordsProxy;
+        var recordsMenuMediator:RecordsMenuMediator = facade.retrieveMediator(RecordsMenuMediator.NAME) as RecordsMenuMediator;
+        recordsMenuMediator.setRecords(recordsProxy.records);
+        recordsMenuMediator.showMenu();
+    }
 }
 }

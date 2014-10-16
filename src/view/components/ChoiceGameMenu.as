@@ -43,45 +43,44 @@ public class ChoiceGameMenu extends Sprite {
         b2D = Button.Create("Двухмерная 2D", Styles.MENU_BUTTON, Styles.ORANGE_TEXT);
         b2D.x = (MainMenuMediator.panelWidth - b2D.width) / 2;
         b2D.y = label.y + label.height + MainMenuMediator.PADDING * 3;
-		this.addChild(b2D);
+        this.addChild(b2D);
 
         b3D = Button.Create("Трехмерная 3D", Styles.MENU_BUTTON, Styles.ORANGE_TEXT);
         b3D.x = (MainMenuMediator.panelWidth - b3D.width) / 2;
         b3D.y = b2D.y + b2D.height + MainMenuMediator.PADDING;
-		this.addChild(b3D);
+        this.addChild(b3D);
 
         bBack = Button.Create("Назад", Styles.MENU_BUTTON, Styles.ORANGE_TEXT);
         bBack.x = (MainMenuMediator.panelWidth - bBack.width) / 2;
         bBack.y = b3D.y + b3D.height + MainMenuMediator.PADDING;
-		this.addChild(bBack);
+        this.addChild(bBack);
 
-		this.hide();
+        this.hide();
     }
 
-	public function show():void {
-		this.visible = true;
+    public function show():void {
+        this.visible = true;
 
-		var delay:Number = 0.05;
+        var delay:Number = 0.05;
 
-		var tween1:TweenLite = new TweenLite(label, 0.5, {alpha: 1});
-		var tween2:TweenLite = new TweenLite(b2D, 0.5, {x:b2D.x, delay: 0 * delay, ease:Back.easeOut});
-		var tween3:TweenLite = new TweenLite(b3D, 0.5, {x:b3D.x, delay: 1 * delay, ease:Back.easeOut});
-		var tween4:TweenLite = new TweenLite(bBack, 0.5, {x:bBack.x, delay: 2 * delay, ease:Back.easeOut});
+        var tween1:TweenLite = new TweenLite(label, 0.5, {alpha: 1});
+        var tween2:TweenLite = new TweenLite(b2D, 0.5, {x:b2D.x, delay: 0 * delay, ease:Back.easeOut});
+        var tween3:TweenLite = new TweenLite(b3D, 0.5, {x:b3D.x, delay: 1 * delay, ease:Back.easeOut});
+        var tween4:TweenLite = new TweenLite(bBack, 0.5, {x:bBack.x, delay: 2 * delay, ease:Back.easeOut});
 
-		label.alpha = 0;
-		b2D.x = this.stage.stageWidth;
-		b3D.x = this.stage.stageWidth;
-		bBack.x = this.stage.stageWidth;
+        label.alpha = 0;
+        b2D.x = this.stage.stageWidth;
+        b3D.x = this.stage.stageWidth;
+        bBack.x = this.stage.stageWidth;
 
-		tween1.play();
-		tween2.play();
-		tween3.play();
-		tween4.play();
-	}
+        tween1.play();
+        tween2.play();
+        tween3.play();
+        tween4.play();
+    }
 
-	public function hide():void {
-		this.visible = false;
-	}
-
+    public function hide():void {
+        this.visible = false;
+    }
 }
 }

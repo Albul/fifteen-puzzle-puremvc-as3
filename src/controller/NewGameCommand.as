@@ -32,32 +32,32 @@ import view.components.IBoard;
 
 public class NewGameCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var param:Object = notification.getBody();
+    override public function execute(notification:INotification):void {
+        var param:Object = notification.getBody();
 
-		var puzzleProxy:PuzzlesProxy = facade.retrieveProxy(PuzzlesProxy.NAME) as PuzzlesProxy;
-		var timeProxy:TimeProxy = facade.retrieveProxy(TimeProxy.NAME) as TimeProxy;
-		var stageProxy:StageProxy = facade.retrieveProxy(StageProxy.NAME) as StageProxy;
+        var puzzleProxy:PuzzlesProxy = facade.retrieveProxy(PuzzlesProxy.NAME) as PuzzlesProxy;
+        var timeProxy:TimeProxy = facade.retrieveProxy(TimeProxy.NAME) as TimeProxy;
+        var stageProxy:StageProxy = facade.retrieveProxy(StageProxy.NAME) as StageProxy;
 
-		var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
-		mainMenuMediator.hideContainer();
+        var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
+        mainMenuMediator.hideContainer();
 
-		var choiceGameMenuMediator:ChoiceGameMenuMediator =
-				facade.retrieveMediator(ChoiceGameMenuMediator.NAME) as ChoiceGameMenuMediator;
-		choiceGameMenuMediator.hideMenu();
+        var choiceGameMenuMediator:ChoiceGameMenuMediator =
+                facade.retrieveMediator(ChoiceGameMenuMediator.NAME) as ChoiceGameMenuMediator;
+        choiceGameMenuMediator.hideMenu();
 
-		var applicationMediator:ApplicationMediator
-				= facade.retrieveMediator(ApplicationMediator.NAME) as ApplicationMediator;
+        var applicationMediator:ApplicationMediator
+                = facade.retrieveMediator(ApplicationMediator.NAME) as ApplicationMediator;
 
-		var board:IBoard = (param.type == "2d"? new Board2D(applicationMediator.application)
-				: new Board3D(applicationMediator.application));
+        var board:IBoard = (param.type == "2d"? new Board2D(applicationMediator.application)
+                : new Board3D(applicationMediator.application));
 
 
-		facade.registerMediator(new BoardMediator(board));
+        facade.registerMediator(new BoardMediator(board));
 
-		puzzleProxy.init();
-		timeProxy.init();
-		stageProxy.sendResize();
-	}
+        puzzleProxy.init();
+        timeProxy.init();
+        stageProxy.sendResize();
+    }
 }
 }

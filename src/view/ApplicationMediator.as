@@ -21,35 +21,35 @@ import org.puremvc.as3.patterns.mediator.Mediator;
 
 public class ApplicationMediator extends Mediator implements IMediator {
 
-	public static const NAME:String = "applicationMediator";
+    public static const NAME:String = "applicationMediator";
 
-	public function ApplicationMediator(viewComponent:Object) {
-		super(NAME, viewComponent);
-	}
+    public function ApplicationMediator(viewComponent:Object) {
+        super(NAME, viewComponent);
+    }
 
-	public function get application():Main {
-		return viewComponent as Main;
-	}
+    public function get application():Main {
+        return viewComponent as Main;
+    }
 
-	override public function listNotificationInterests():Array {
-		return [
+    override public function listNotificationInterests():Array {
+        return [
 //            ApplicationFacade.STAGE_RESIZE
-		];
-	}
+        ];
+    }
 
-	override public function handleNotification(notification:INotification):void {
-		switch (notification.getName()) {
+    override public function handleNotification(notification:INotification):void {
+        switch (notification.getName()) {
 
-			case ApplicationFacade.STAGE_RESIZE:
+            case ApplicationFacade.STAGE_RESIZE:
 //                var stage:StageProxy = notification.getBody() as StageProxy;
-				application.x = (application.stage.stageWidth - application.width) / 2;
-				application.y = (application.stage.stageHeight - application.height) / 2;
-				break;
+                application.x = (application.stage.stageWidth - application.width) / 2;
+                application.y = (application.stage.stageHeight - application.height) / 2;
+                break;
 
-			default:
-				break;
-		}
-	}
+            default:
+                break;
+        }
+    }
 
 }
 }

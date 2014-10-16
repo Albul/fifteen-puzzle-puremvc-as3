@@ -30,20 +30,18 @@ import org.puremvc.as3.patterns.command.SimpleCommand;
 
 public class ModelPrepCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var root:Main = (notification.getBody() as Main);
+    override public function execute(notification:INotification):void {
+        var root:Main = (notification.getBody() as Main);
 
-		// Initialize game data
-		var puzzlesVO:PuzzlesVO = new PuzzlesVO();
-		puzzlesVO.time = new TimeVO();
-		puzzlesVO.matrix = new Dictionary();
+        var puzzlesVO:PuzzlesVO = new PuzzlesVO();
+        puzzlesVO.time = new TimeVO();
+        puzzlesVO.matrix = new Dictionary();
 
-		// Registration proxy
-		facade.registerProxy(new PuzzlesProxy(puzzlesVO));
-		facade.registerProxy(new TimeProxy(puzzlesVO.time));
-		facade.registerProxy(new MatrixProxy(puzzlesVO.matrix));
-		facade.registerProxy(new StageProxy(root.stage));
-		facade.registerProxy(new RecordsProxy());
-	}
+        facade.registerProxy(new PuzzlesProxy(puzzlesVO));
+        facade.registerProxy(new TimeProxy(puzzlesVO.time));
+        facade.registerProxy(new MatrixProxy(puzzlesVO.matrix));
+        facade.registerProxy(new StageProxy(root.stage));
+        facade.registerProxy(new RecordsProxy());
+    }
 }
 }

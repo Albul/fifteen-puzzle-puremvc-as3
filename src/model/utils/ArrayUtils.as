@@ -16,21 +16,21 @@
 package model.utils {
 public class ArrayUtils {
 
-	public static function shuffle(arr:Array):Array {
-		var max = arr.length - 1;
-		for (var j, x, i = max; i >= 0;
-		     j = MathUtils.getRandomInt(0, max), x = arr[i], arr[i] = arr[j], arr[j] = x, i--);
-		return arr;
-	}
+    public static function shuffle(arr:Array):Array {
+        var max = arr.length - 1;
+        for (var j, x, i = max; i >= 0;
+             j = MathUtils.getRandomInt(0, max), x = arr[i], arr[i] = arr[j], arr[j] = x, i--);
+        return arr;
+    }
 
-	public static function getRandomArray(start:int, end:int):Array {
-		var arr = new Array(end - start);
+    public static function getRandomArray(start:int, end:int):Array {
+        var arr = new Array(end - start);
 
-		for (var i:int = 0; i + start <= end; i++) {
-			arr[i] = i + start;
-		}
-		shuffle(arr);
-		return shuffle(arr);
-	}
+        for (var i:int = 0; i + start <= end; i++) {
+            arr[i] = i + start;
+        }
+        shuffle(arr);
+        return shuffle(arr);
+    }
 }
 }

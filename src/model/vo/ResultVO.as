@@ -16,9 +16,9 @@
 package model.vo {
 public class ResultVO {
 
-	public var name:String;
-	public var steps:int;
-	public var time:int;
+    public var name:String;
+    public var steps:int;
+    public var time:int;
 
 }
 }

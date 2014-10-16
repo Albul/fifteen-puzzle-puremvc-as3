@@ -45,48 +45,48 @@ public class TimeProxy extends Proxy implements IProxy  {
         timer.start();
     }
 
-	public function set pause(value:Boolean):void {
-		if (value) {
-			timer.stop();
-		} else {
-			timer.start();
-		}
-	}
+    public function set pause(value:Boolean):void {
+        if (value) {
+            timer.stop();
+        } else {
+            timer.start();
+        }
+    }
 
-	public function get pause():Boolean {
-		if (timer == null) {
-			return false;
-		} else {
-			return !timer.running;
-		}
-	}
+    public function get pause():Boolean {
+        if (timer == null) {
+            return false;
+        } else {
+            return !timer.running;
+        }
+    }
 
-	/**
-	 * @private
-	 * Update game time
-	 */
+    /**
+     * @private
+     * Update game time
+     */
     private function onTimer(e:TimerEvent):void {
         time.value++;
         var min:int = time.value / 60;
         var sec:int = time.value % 60;
 
-		// Format the minutes
-		if (min >= 10) {
-			time.valueStr = min.toString();
-		} else {
-			time.valueStr = "0" + min.toString();
-		}
-		time.valueStr += ":";
+        // Format the minutes
+        if (min >= 10) {
+            time.valueStr = min.toString();
+        } else {
+            time.valueStr = "0" + min.toString();
+        }
+        time.valueStr += ":";
 
-		// Format the second
-		if (sec >= 10) {
-			time.valueStr += sec.toString();
-		} else {
-			time.valueStr += "0" + sec.toString();
-		}
+        // Format the second
+        if (sec >= 10) {
+            time.valueStr += sec.toString();
+        } else {
+            time.valueStr += "0" + sec.toString();
+        }
 
         sendNotification(ApplicationFacade.TIME_UPDATED, time.valueStr);
-		trace(time.valueStr);
+        trace(time.valueStr);
     }
 }
 }

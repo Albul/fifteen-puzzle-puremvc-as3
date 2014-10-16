@@ -25,16 +25,16 @@ import view.ResultMenuMediator;
 
 public class FinishGameCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var boardMediator:BoardMediator = facade.retrieveMediator(BoardMediator.NAME) as BoardMediator;
-		var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
-		var resultMenuMediator:ResultMenuMediator = facade.retrieveMediator(ResultMenuMediator.NAME) as ResultMenuMediator;
+    override public function execute(notification:INotification):void {
+        var boardMediator:BoardMediator = facade.retrieveMediator(BoardMediator.NAME) as BoardMediator;
+        var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
+        var resultMenuMediator:ResultMenuMediator = facade.retrieveMediator(ResultMenuMediator.NAME) as ResultMenuMediator;
 
-		boardMediator.hideBoard();
-		mainMenuMediator.showContainer();
-		mainMenuMediator.hideMenu();
+        boardMediator.hideBoard();
+        mainMenuMediator.showContainer();
+        mainMenuMediator.hideMenu();
 //		sendNotification(ApplicationFacade.STAGE_RESIZE);
-		resultMenuMediator.showMenu();
-	}
+        resultMenuMediator.showMenu();
+    }
 }
 }

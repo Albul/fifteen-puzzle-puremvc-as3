@@ -38,34 +38,34 @@ public class ViewPrepCommand extends SimpleCommand {
         facade.registerMediator(new ApplicationMediator(application));
 
         var mainMenu:MainMenu = new MainMenu();
-		application.addChild(mainMenu.container);
+        application.addChild(mainMenu.container);
 
-		var mainMenuMediator = new MainMenuMediator(mainMenu);
+        var mainMenuMediator = new MainMenuMediator(mainMenu);
         facade.registerMediator(mainMenuMediator);
 
-		var choiceGameMenu:ChoiceGameMenu = new ChoiceGameMenu();
-		mainMenu.container.addChild(choiceGameMenu);
+        var choiceGameMenu:ChoiceGameMenu = new ChoiceGameMenu();
+        mainMenu.container.addChild(choiceGameMenu);
         facade.registerMediator(new ChoiceGameMenuMediator(choiceGameMenu));
 
-		var aboutMenu:AboutMenu = new AboutMenu();
-		mainMenu.container.addChild(aboutMenu);
-		facade.registerMediator(new AboutMenuMediator(aboutMenu));
+        var aboutMenu:AboutMenu = new AboutMenu();
+        mainMenu.container.addChild(aboutMenu);
+        facade.registerMediator(new AboutMenuMediator(aboutMenu));
 
-	    var recordsMenu:RecordsMenu = new RecordsMenu();
-	    mainMenu.container.addChild(recordsMenu);
-	    facade.registerMediator(new RecordsMenuMediator(recordsMenu));
+        var recordsMenu:RecordsMenu = new RecordsMenu();
+        mainMenu.container.addChild(recordsMenu);
+        facade.registerMediator(new RecordsMenuMediator(recordsMenu));
 
-	    var resultMenu:ResultMenu = new ResultMenu();
-	    mainMenu.container.addChild(resultMenu);
-	    facade.registerMediator(new ResultMenuMediator(resultMenu));
+        var resultMenu:ResultMenu = new ResultMenu();
+        mainMenu.container.addChild(resultMenu);
+        facade.registerMediator(new ResultMenuMediator(resultMenu));
 
-	    sendNotification(ApplicationFacade.SHOW_MAIN_MENU);
-/*	    mainMenuMediator.showContainer();
-
-	    var stageProxy:StageProxy = facade.retrieveProxy(StageProxy.NAME) as StageProxy;
-	    stageProxy.sendResize();
-
-	    mainMenuMediator.showMenu(false);*/
+        sendNotification(ApplicationFacade.SHOW_MAIN_MENU);
+        /*
+         mainMenuMediator.showContainer();
+         var stageProxy:StageProxy = facade.retrieveProxy(StageProxy.NAME) as StageProxy;
+         stageProxy.sendResize();
+         mainMenuMediator.showMenu(false);
+         */
     }
 }
 }

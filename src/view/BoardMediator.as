@@ -31,7 +31,7 @@ public class BoardMediator extends Mediator implements IMediator {
 
     public static const NAME:String = "boardMediator";
 
-	public static const DURATION:Number = 0.3; // Duration moving puzzle
+    public static const DURATION:Number = 0.3; // Duration moving puzzle
 
     public function BoardMediator(viewComponent:Object) {
         super(NAME, viewComponent);
@@ -39,13 +39,13 @@ public class BoardMediator extends Mediator implements IMediator {
         boardDispatcher.addEventListener(BoardEvent.FINISH_CLICKED, onFinishClicked);
     }
 
-	public function showBoard():void {
-		board.show();
-	}
+    public function showBoard():void {
+        board.show();
+    }
 
-	public function hideBoard():void {
-		board.hide();
-	}
+    public function hideBoard():void {
+        board.hide();
+    }
 
     /**
      * List of events which will react this mediator
@@ -54,9 +54,9 @@ public class BoardMediator extends Mediator implements IMediator {
     override public function listNotificationInterests():Array {
         return [
             ApplicationFacade.PUZZLES_CREATED,
-			ApplicationFacade.PUZZLES_CHANGED,
+            ApplicationFacade.PUZZLES_CHANGED,
             ApplicationFacade.TIME_UPDATED,
-	        ApplicationFacade.STAGE_RESIZE
+            ApplicationFacade.STAGE_RESIZE
         ];
     }
 
@@ -72,7 +72,7 @@ public class BoardMediator extends Mediator implements IMediator {
                 break;
 
             case ApplicationFacade.PUZZLES_CHANGED:
-				var params:Object = notification.getBody();
+                var params:Object = notification.getBody();
                 board.updatePuzzles(params.number, params.index, params.steps);
                 break;
 
@@ -80,11 +80,11 @@ public class BoardMediator extends Mediator implements IMediator {
                 board.updateTime(notification.getBody() as String);
                 break;
 
-	        case ApplicationFacade.STAGE_RESIZE:
-		        var stage:StageProxy = notification.getBody() as StageProxy;
-		        board.container.x = (stage.stageWidth - board.container.width) / 2;
-		        board.container.y = (stage.stageHeight -board.container.height) / 2;
-		        break;
+            case ApplicationFacade.STAGE_RESIZE:
+                var stage:StageProxy = notification.getBody() as StageProxy;
+                board.container.x = (stage.stageWidth - board.container.width) / 2;
+                board.container.y = (stage.stageHeight -board.container.height) / 2;
+                break;
 
             default:
                 break;
@@ -100,11 +100,11 @@ public class BoardMediator extends Mediator implements IMediator {
     }
 
     private function onPuzzleClicked(e:BoardEvent):void {
-		sendNotification(ApplicationFacade.CMD_PUZZLE_CLICK, e.number);
+        sendNotification(ApplicationFacade.CMD_PUZZLE_CLICK, e.number);
     }
 
-	private function onFinishClicked(e:BoardEvent):void {
-		sendNotification(ApplicationFacade.CMD_FINISH);
-	}
+    private function onFinishClicked(e:BoardEvent):void {
+        sendNotification(ApplicationFacade.CMD_FINISH);
+    }
 }
 }

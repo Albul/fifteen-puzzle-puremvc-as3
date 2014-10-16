@@ -17,7 +17,7 @@ package model.vo {
 public class TimeVO {
 
     public var value:int; // Elapsed time in seconds
-    public var valueStr:String;	// In the string representation (minutes: seconds)
+    public var valueStr:String;	// Minutes: seconds
 
 }
 }

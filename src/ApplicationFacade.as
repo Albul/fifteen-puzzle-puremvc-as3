@@ -32,43 +32,43 @@ import org.puremvc.as3.patterns.facade.Facade;
 
 public class ApplicationFacade extends Facade implements IFacade {
 
-	public static const CMD_STARTUP:String = "cmdStartup"; // Run the application
-	public static const CMD_NEW_GAME:String = "cmdNewGame";
-	public static const CMD_PUZZLE_CLICK:String = "cmdPuzzleClick";
-	public static const CMD_FINISH:String = "cmdFinish";
-	public static const CMD_EXIT:String = "cmdExit"; // Quit the game
+    public static const CMD_STARTUP:String = "cmdStartup";
+    public static const CMD_NEW_GAME:String = "cmdNewGame";
+    public static const CMD_PUZZLE_CLICK:String = "cmdPuzzleClick";
+    public static const CMD_FINISH:String = "cmdFinish";
+    public static const CMD_EXIT:String = "cmdExit";
 
-	public static const SHOW_MAIN_MENU:String = "showMainMenu";
-	public static const SHOW_CHOICE_GAME:String = "showChoiceGame";
-	public static const SHOW_RECORDS:String = "showRecords";
-	public static const SHOW_ABOUT:String = "showAbout";
+    public static const SHOW_MAIN_MENU:String = "showMainMenu";
+    public static const SHOW_CHOICE_GAME:String = "showChoiceGame";
+    public static const SHOW_RECORDS:String = "showRecords";
+    public static const SHOW_ABOUT:String = "showAbout";
 
-	public static const STAGE_RESIZE:String = "stageResize";
-	public static const PUZZLES_CREATED:String = "puzzlesCreated"; // Matrix of puzzles is created
-	public static const PUZZLES_CHANGED:String = "puzzlesChanged";
-	public static const TIME_UPDATED:String = "timeUpdated";
+    public static const STAGE_RESIZE:String = "stageResize";
+    public static const PUZZLES_CREATED:String = "puzzlesCreated";
+    public static const PUZZLES_CHANGED:String = "puzzlesChanged";
+    public static const TIME_UPDATED:String = "timeUpdated";
 
-	public static function getInstance():ApplicationFacade {
-		if (instance == null) instance = new ApplicationFacade();
-		return instance as ApplicationFacade;
-	}
+    public static function getInstance():ApplicationFacade {
+        if (instance == null) instance = new ApplicationFacade();
+        return instance as ApplicationFacade;
+    }
 
-	public function startup(root:DisplayObject):void {
+    public function startup(root:DisplayObject):void {
 //        notifyObservers(new Notification(CMD_STARTUP, root));
-		sendNotification(CMD_STARTUP, root);
-	}
+        sendNotification(CMD_STARTUP, root);
+    }
 
-	override protected function initializeController():void {
-		super.initializeController();
-		registerCommand(CMD_STARTUP, StartupCommand);
-		registerCommand(CMD_NEW_GAME, NewGameCommand);
-		registerCommand(CMD_FINISH, FinishGameCommand);
-		registerCommand(CMD_PUZZLE_CLICK, PuzzleClickCommand);
-		registerCommand(CMD_EXIT, ExitCommand);
-		registerCommand(SHOW_ABOUT, ShowAboutCommand);
-		registerCommand(SHOW_MAIN_MENU, ShowMainMenuCommand);
-		registerCommand(SHOW_CHOICE_GAME, ShowChoiceGameCommand);
-		registerCommand(SHOW_RECORDS, ShowRecordsCommand);
-	}
+    override protected function initializeController():void {
+        super.initializeController();
+        registerCommand(CMD_STARTUP, StartupCommand);
+        registerCommand(CMD_NEW_GAME, NewGameCommand);
+        registerCommand(CMD_FINISH, FinishGameCommand);
+        registerCommand(CMD_PUZZLE_CLICK, PuzzleClickCommand);
+        registerCommand(CMD_EXIT, ExitCommand);
+        registerCommand(SHOW_ABOUT, ShowAboutCommand);
+        registerCommand(SHOW_MAIN_MENU, ShowMainMenuCommand);
+        registerCommand(SHOW_CHOICE_GAME, ShowChoiceGameCommand);
+        registerCommand(SHOW_RECORDS, ShowRecordsCommand);
+    }
 }
 }

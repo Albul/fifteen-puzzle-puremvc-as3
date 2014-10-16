@@ -23,10 +23,9 @@ public class PuzzlesVO {
     public var rows:int;
     public var cols:int;
 
-    public var matrix:Dictionary; // Matrix puzzles
+    public var matrix:Dictionary;
 
-    public var time:TimeVO;	// Amount of elapsed time
-	public var steps:int; // Number of steps taken
-
+    public var time:TimeVO;
+    public var steps:int;
 }
 }

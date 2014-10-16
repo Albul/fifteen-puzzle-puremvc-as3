@@ -22,11 +22,11 @@ import org.puremvc.as3.patterns.command.SimpleCommand;
 
 public class PuzzleClickCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var param:int = notification.getBody() as int;
-		var puzzleProxy:PuzzlesProxy = facade.retrieveProxy(PuzzlesProxy.NAME) as PuzzlesProxy;
-		puzzleProxy.tryChange(param);
-		trace(param);
-	}
+    override public function execute(notification:INotification):void {
+        var param:int = notification.getBody() as int;
+        var puzzleProxy:PuzzlesProxy = facade.retrieveProxy(PuzzlesProxy.NAME) as PuzzlesProxy;
+        puzzleProxy.tryChange(param);
+        trace(param);
+    }
 }
 }

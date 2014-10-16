@@ -25,19 +25,19 @@ import view.MainMenuMediator;
 
 public class ShowMainMenuCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var mediator:Object = notification.getBody();
-		var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
-		var stageProxy:StageProxy = facade.retrieveProxy(StageProxy.NAME) as StageProxy;
-		var timeProxy:TimeProxy = facade.retrieveProxy(TimeProxy.NAME) as TimeProxy;
+    override public function execute(notification:INotification):void {
+        var mediator:Object = notification.getBody();
+        var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
+        var stageProxy:StageProxy = facade.retrieveProxy(StageProxy.NAME) as StageProxy;
+        var timeProxy:TimeProxy = facade.retrieveProxy(TimeProxy.NAME) as TimeProxy;
 
-		if (mediator != null) {
-			mediator.hideMenu();
-		}
+        if (mediator != null) {
+            mediator.hideMenu();
+        }
 
-		mainMenuMediator.showContainer();
-		stageProxy.sendResize();
-		mainMenuMediator.showMenu(timeProxy.pause);
-	}
+        mainMenuMediator.showContainer();
+        stageProxy.sendResize();
+        mainMenuMediator.showMenu(timeProxy.pause);
+    }
 }
 }

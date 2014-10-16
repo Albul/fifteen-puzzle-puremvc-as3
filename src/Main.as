@@ -20,14 +20,14 @@ import flash.events.Event;
 
 public class Main extends Sprite {
 
-	public function Main() {
-		this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-	}
+    public function Main() {
+        this.addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+    }
 
-	private function onAddedToStage(e:Event):void {
-		this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
-		var facade:ApplicationFacade = ApplicationFacade.getInstance();
-		facade.startup(this);
-	}
+    private function onAddedToStage(e:Event):void {
+        this.removeEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
+        var facade:ApplicationFacade = ApplicationFacade.getInstance();
+        facade.startup(this);
+    }
 }
 }

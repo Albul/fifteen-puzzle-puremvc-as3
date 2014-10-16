@@ -25,13 +25,13 @@ import view.MainMenuMediator;
 
 public class ShowChoiceGameCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
-		mainMenuMediator.hideMenu();
+    override public function execute(notification:INotification):void {
+        var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
+        mainMenuMediator.hideMenu();
 
-		var aboutMenuMediator:ChoiceGameMenuMediator =
-				facade.retrieveMediator(ChoiceGameMenuMediator.NAME) as ChoiceGameMenuMediator;
-		aboutMenuMediator.showMenu();
-	}
+        var aboutMenuMediator:ChoiceGameMenuMediator =
+                facade.retrieveMediator(ChoiceGameMenuMediator.NAME) as ChoiceGameMenuMediator;
+        aboutMenuMediator.showMenu();
+    }
 }
 }

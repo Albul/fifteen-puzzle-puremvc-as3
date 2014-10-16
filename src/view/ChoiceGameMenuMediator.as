@@ -28,22 +28,22 @@ public class ChoiceGameMenuMediator extends Mediator implements IMediator {
 
     public static const NAME:String = "choiceGameMenuMediator";
 
-	private var menu:ChoiceGameMenu;
+    private var menu:ChoiceGameMenu;
 
     public function ChoiceGameMenuMediator(viewComponent:Object) {
         super(NAME, viewComponent);
 
-		menu = viewComponent as ChoiceGameMenu;
+        menu = viewComponent as ChoiceGameMenu;
         menu.addEventListener(MouseEvent.CLICK, onMenuClick);
     }
 
-	public function showMenu():void {
-		menu.show();
-	}
+    public function showMenu():void {
+        menu.show();
+    }
 
-	public function hideMenu():void {
-		menu.hide();
-	}
+    public function hideMenu():void {
+        menu.hide();
+    }
 
     private function onMenuClick(e:MouseEvent):void {
         if (e.target is SimpleButton) {
@@ -58,12 +58,11 @@ public class ChoiceGameMenuMediator extends Mediator implements IMediator {
                     sendNotification(ApplicationFacade.SHOW_MAIN_MENU, this);
                     break;
 
-				default :
+                default :
 
-					break;
+                    break;
             }
         }
     }
-
 }
 }

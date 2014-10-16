@@ -42,6 +42,5 @@ public class BoardEvent extends Event {
     public function get number():int {
         return _number;
     }
-
 }
 }

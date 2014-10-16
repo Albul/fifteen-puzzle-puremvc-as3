@@ -22,14 +22,13 @@ import model.utils.Index;
 
 public interface IBoard {
 
-	function startGame(puzzlesProxy:PuzzlesProxy):void;
-	function updateTime(time:String):void;
-	function updatePuzzles(numPuzzle:int, indexPuzzle:Index, steps:int);
+    function startGame(puzzlesProxy:PuzzlesProxy):void;
+    function updateTime(time:String):void;
+    function updatePuzzles(numPuzzle:int, indexPuzzle:Index, steps:int);
 
-	function show():void;
-	function hide():void;
+    function show():void;
+    function hide():void;
 
-	function get container():Sprite;
-
+    function get container():Sprite;
 }
 }

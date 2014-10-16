@@ -24,12 +24,12 @@ import view.MainMenuMediator;
 
 public class ShowAboutCommand extends SimpleCommand {
 
-	override public function execute(notification:INotification):void {
-		var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
-		mainMenuMediator.hideMenu();
+    override public function execute(notification:INotification):void {
+        var mainMenuMediator:MainMenuMediator = facade.retrieveMediator(MainMenuMediator.NAME) as MainMenuMediator;
+        mainMenuMediator.hideMenu();
 
-		var aboutMenuMediator:AboutMenuMediator = facade.retrieveMediator(AboutMenuMediator.NAME) as AboutMenuMediator;
-		aboutMenuMediator.showMenu();
-	}
+        var aboutMenuMediator:AboutMenuMediator = facade.retrieveMediator(AboutMenuMediator.NAME) as AboutMenuMediator;
+        aboutMenuMediator.showMenu();
+    }
 }
 }

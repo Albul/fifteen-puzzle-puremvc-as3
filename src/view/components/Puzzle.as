@@ -28,6 +28,5 @@ public class Puzzle extends Sprite{
         this.buttonMode = true;
         this.useHandCursor = true;
     }
-
 }
 }

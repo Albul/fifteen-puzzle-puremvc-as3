@@ -31,20 +31,20 @@ public class Board3D implements IBoard {
     public function updateTime(time:String):void {
     }
 
-	public function startGame(puzzlesProxy:PuzzlesProxy):void {
-	}
+    public function startGame(puzzlesProxy:PuzzlesProxy):void {
+    }
 
-	public function updatePuzzles(number:int, index:Index, steps:int) {
-	}
+    public function updatePuzzles(number:int, index:Index, steps:int) {
+    }
 
-	public function show():void {
-	}
+    public function show():void {
+    }
 
-	public function hide():void {
-	}
+    public function hide():void {
+    }
 
-	public function get container():Sprite {
-		return new Sprite();
-	}
+    public function get container():Sprite {
+        return new Sprite();
+    }
 }
 }
