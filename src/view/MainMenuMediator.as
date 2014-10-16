@@ -29,7 +29,6 @@ import view.gui.Button;
 public class MainMenuMediator extends Mediator implements IMediator {
 
     public static const NAME:String = "mainMenuMediator";
-
     public static const PADDING:int = 15;
     public static var panelWidth:Number;
 
